@@ -1,3 +1,4 @@
+/* Base Body and Background */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,20 +6,15 @@ body {
     background-color: #1a1a2e;
     color: #fff;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    min-height: 100vh;
+    justify-content: space-between; /* Distribuisce il contenuto tra la parte superiore e inferiore */
+    align-items: center; /* Centra orizzontalmente */
+    min-height: 100vh; /* L'altezza della pagina deve occupare tutta la finestra */
     background: url('logo.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 
-.icon {
-    width: 20px;
-    height: 20px;
-    margin-left: 10px;
-}
-
+/* Header Style */
 header {
     background: linear-gradient(135deg, #FFD700, #FFA500);
     color: #333;
@@ -27,22 +23,29 @@ header {
     font-size: 24px;
     font-weight: bold;
     width: 100%;
-    position: fixed;
-    top: 0;
+    position: relative;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    height: 80px;
+    line-height: 60px;
+    margin-top: 0;
+    z-index: 1;
 }
 
+/* Container for All Content */
 .container {
-    width: 90%;
-    max-width: 400px;
-    text-align: center;
-    margin-top: 100px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* 🔥 Centra tutti i blocchi */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra orizzontalmente */
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 80px; /* Spazio per header */
+    margin-bottom: 100px; /* Spazio per footer */
+    flex-grow: 1; /* Assicura che la container prenda l'altezza disponibile */
 }
 
-/* Stile per i due blocchi principali */
+/* Block Containers for Links */
 .link-container,
 .about-toggle {
     background: linear-gradient(135deg, #FFD700, #FFA500);
@@ -55,6 +58,7 @@ header {
     font-weight: bold;
     cursor: pointer;
     transition: transform 0.2s;
+    margin-bottom: 15px; /* Spazio tra i blocchi */
 }
 
 .link-container a {
@@ -68,6 +72,7 @@ header {
     transform: scale(1.05);
 }
 
+/* Block for "Chi Siamo" Toggling */
 .about-toggle {
     background: linear-gradient(135deg, #FFD700, #FFA500);
     padding: 15px;
@@ -80,10 +85,10 @@ header {
     cursor: pointer;
     transition: transform 0.2s;
     margin-top: 10px;
-    color: black; /* 🔥 Ora il testo è nero */
+    color: black;
 }
 
-/* Blocco testo "Chi Siamo" */
+/* "Chi Siamo" Content Block */
 .about {
     background: #fff;
     color: #333;
@@ -93,22 +98,22 @@ header {
     font-size: 18px;
     line-height: 1.6;
     width: 100%;
-    max-width: 400px; /* 🔥 Larghezza perfettamente uguale agli altri blocchi */
+    max-width: 600px; /* Larghezza ottimizzata */
     text-align: center;
-    
-    /* 🔥 Centra perfettamente il contenuto */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
-    margin-top: 10px; /* 🔥 Allineamento perfetto */
+    margin-top: 10px;
+    min-height: 100px;
 }
+
+/* Hidden "Chi Siamo" Block */
 .hidden {
     display: none;
 }
 
-/* Footer */
+/* Footer Style */
 footer {
     background: linear-gradient(135deg, #FFD700, #FFA500);
     text-align: center;
@@ -118,19 +123,60 @@ footer {
     position: fixed;
     bottom: 0;
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 2; /* Mantiene il footer sopra gli altri contenuti */
 }
 
+/* Flex Container for About Text and Image */
 .about-content {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 20px; /* Spazio tra immagine e testo */
+    justify-content: center;
+    text-align: center;
+    width: 100%;
 }
 
-.about-content.active {
-    max-height: 500px; /* Espande il contenitore quando attivo */
+/* Make sure About section is responsive */
+#about {
+    width: 90%;
+    max-width: 900px;
+    margin-bottom: 40px;
 }
 
+/* About Image Style */
 .about-img {
-    width: 150px;
-    border-radius: 10px;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+
+/* Active "Chi Siamo" Block */
+.about-content.active {
+    max-height: 500px;
+}
+
+/* Ensuring content fits across different screen sizes */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        margin-top: 150px;
+    }
+
+    .link-container,
+    .about-toggle {
+        font-size: 18px;
+        padding: 12px;
+    }
+
+    .about {
+        font-size: 16px;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
 }

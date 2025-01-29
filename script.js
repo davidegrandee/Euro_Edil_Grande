@@ -14,6 +14,7 @@ function toggleAbout() {
 }
 
 document.getElementById("about-toggle").addEventListener("click", function() {
-    var content = document.querySelector(".about-content");
-    content.classList.toggle("active");
+    let aboutSection = document.getElementById("about");
+    aboutSection.style.display = (aboutSection.style.display === "none" || aboutSection.style.display === "") ? "block" : "none";
+    document.body.style.height = "auto"; // Permette l’espansione della pagina su Android
 });
