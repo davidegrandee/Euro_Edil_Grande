@@ -12,3 +12,8 @@ function toggleAbout() {
         arrow.innerHTML = "▲"; // Mostra freccia in su
     }
 }
+
+document.getElementById("about-toggle").addEventListener("click", function() {
+    var content = document.querySelector(".about-content");
+    content.classList.toggle("active");
+});

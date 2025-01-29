@@ -111,3 +111,13 @@ footer {
     bottom: 0;
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
 }
+
+.about-content {
+    max-height: 0; /* Inizialmente nascosto */
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+}
+
+.about-content.active {
+    max-height: 500px; /* Espande il contenitore quando attivo */
+}
