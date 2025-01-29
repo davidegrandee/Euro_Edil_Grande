@@ -30,6 +30,7 @@ header {
     line-height: 60px;
     margin-top: 0;
     z-index: 1;
+    word-wrap: break-word; /* Aggiunge la rottura automatica delle parole */
 }
 
 /* Container for All Content */
@@ -168,6 +169,10 @@ footer {
     .link-container a {
         display: block; /* Assicurati che sia un blocco interamente cliccabile */
         width: 100%; /* Rende il link completamente cliccabile */
+    }
+    header {
+        font-size: 18px; /* Riduce la dimensione del testo */
+        padding: 15px; /* Riduce il padding per adattarsi meglio */
     }
 }
 
