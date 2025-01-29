@@ -1,3 +1,5 @@
+/* Iniziamo con il CSS esistente, aggiungiamo però il supporto per dispositivi mobili */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -39,18 +41,18 @@ header {
     text-decoration: none;
     margin: 15px 0;
     font-size: 18px;
-    position: relative; /* Necessario per posizionare lo sfondo */
+    position: relative;
     display: block;
     padding: 10px 20px;
     border-radius: 5px;
     text-align: center;
-    background: linear-gradient(135deg, #FFD700, #FFA500);  /* Sfondo giallo */
-    box-shadow: none; /* Rimuove l'ombra */
-    transition: background 0.3s ease-in-out; /* Aggiunge un effetto di transizione */
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    box-shadow: none;
+    transition: background 0.3s ease-in-out;
 }
 
 .nav-container a:hover {
-    background: linear-gradient(135deg, #FFA500, #FFD700); /* Cambio del gradiente al passaggio del mouse */
+    background: linear-gradient(135deg, #FFA500, #FFD700);
     color: #222;
 }
 
@@ -91,7 +93,6 @@ footer {
     justify-content: center;
     align-items: center;
     text-align: center;
-    min-height: 300px; /* Assicura che l'altezza sia sufficiente per il centraggio */
 }
 
 .about h2 {
@@ -112,12 +113,6 @@ footer {
     text-align: center;
 }
 
-.about p::first-letter {
-    font-size: 2em;
-    color: #FFD700;
-    font-weight: bold;
-}
-
 .about p a {
     color: #FFA500;
     text-decoration: none;
@@ -127,4 +122,21 @@ footer {
 
 .about p a:hover {
     color: #333;
+}
+
+/* Media Queries per dispositivi mobili */
+@media (max-width: 768px) {
+    .nav-container a {
+        font-size: 16px;
+        padding: 15px 30px;
+        width: 100%; /* Assicura che il link occupi tutta la larghezza disponibile */
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    footer {
+        font-size: 14px;
+    }
 }
