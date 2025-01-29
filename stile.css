@@ -29,11 +29,15 @@ header {
     line-height: 60px;
     margin-top: 0;
     z-index: 1;
-    white-space: normal; /* Permette di andare a capo su schermi piccoli */
-    word-wrap: break-word; /* Consente la rottura delle parole */
-    overflow: hidden; /* Nasconde eventuale testo che esce fuori */
+    white-space: normal;
+    word-wrap: break-word; /* Parole troppo lunghe vengono spezzate */
+    word-break: break-word; /* Aggiungi questo per forzare la rottura delle parole lunghe */
+    overflow: hidden; /* Nasconde eventuale testo che esce */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Assicura che il contenuto sia centrato */
+    flex-wrap: wrap; /* Permette al contenuto di andare a capo se necessario */
 }
-
 /* Container for All Content */
 .container {
     display: flex;
