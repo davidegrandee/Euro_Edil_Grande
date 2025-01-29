@@ -15,7 +15,6 @@ body {
     background-position: center center; /* Centra l'immagine */
 }
 
-/* Header Style */
 header {
     background: linear-gradient(135deg, #FFD700, #FFA500);
     color: #333;
@@ -30,7 +29,9 @@ header {
     line-height: 60px;
     margin-top: 0;
     z-index: 1;
-    word-wrap: break-word; /* Aggiunge la rottura automatica delle parole */
+    white-space: normal; /* Permette di andare a capo su schermi piccoli */
+    word-wrap: break-word; /* Consente la rottura delle parole */
+    overflow: hidden; /* Nasconde eventuale testo che esce fuori */
 }
 
 /* Container for All Content */
@@ -172,7 +173,14 @@ footer {
     }
     header {
         font-size: 18px; /* Riduce la dimensione del testo */
-        padding: 15px; /* Riduce il padding per adattarsi meglio */
+        padding: 15px; /* Riduce il padding per una migliore visualizzazione */
+        line-height: 1.2; /* Migliora l'altezza della riga */
+    }
+    
+    /* Assicura che l'header non fuoriesca dal contenitore */
+    .container {
+        width: 100%;
+        padding: 10px;
     }
 }
 
