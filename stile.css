@@ -1,17 +1,14 @@
-/* Iniziamo con il CSS esistente, aggiungiamo però il supporto per dispositivi mobili */
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #1a1a2e;
     color: #fff;
-    overflow-x: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
@@ -21,122 +18,96 @@ header {
     text-align: center;
     font-size: 24px;
     font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     width: 100%;
     position: fixed;
     top: 0;
-}
-
-.nav-container {
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 80px;
-    border-radius: 10px;
-}
-
-.nav-container a {
-    color: white;
-    text-decoration: none;
-    margin: 15px 0;
-    font-size: 18px;
-    position: relative;
-    display: block;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-align: center;
-    background: linear-gradient(135deg, #FFD700, #FFA500);
-    box-shadow: none;
-    transition: background 0.3s ease-in-out;
-}
-
-.nav-container a:hover {
-    background: linear-gradient(135deg, #FFA500, #FFD700);
-    color: #222;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .container {
-    max-width: 800px;
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
     text-align: center;
-    margin-top: 20px;
-    color: #333;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 🔥 Centra tutti i blocchi */
 }
 
+/* Stile per i due blocchi principali */
+.link-container,
+.about-toggle {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.link-container a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.link-container:hover,
+.about-toggle:hover {
+    transform: scale(1.05);
+}
+
+.about-toggle {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+    margin-top: 10px;
+    color: black; /* 🔥 Ora il testo è nero */
+}
+
+/* Blocco testo "Chi Siamo" */
+.about {
+    background: #fff;
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    line-height: 1.6;
+    width: 100%;
+    max-width: 400px; /* 🔥 Larghezza perfettamente uguale agli altri blocchi */
+    text-align: center;
+    
+    /* 🔥 Centra perfettamente il contenuto */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    margin-top: 10px; /* 🔥 Allineamento perfetto */
+}
+.hidden {
+    display: none;
+}
+
+/* Footer */
 footer {
     background: linear-gradient(135deg, #FFD700, #FFA500);
     text-align: center;
     padding: 15px;
     font-size: 16px;
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
     width: 100%;
     position: fixed;
     bottom: 0;
-}
-
-.about {
-    background: #f4f4f9;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    color: #333;
-    max-width: 900px;
-    margin: 50px auto;
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.about h2 {
-    font-size: 32px;
-    color: #333;
-    font-weight: 700;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.about p {
-    font-size: 18px;
-    color: #555;
-    line-height: 1.8;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-
-.about p a {
-    color: #FFA500;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-.about p a:hover {
-    color: #333;
-}
-
-/* Media Queries per dispositivi mobili */
-@media (max-width: 768px) {
-    .nav-container a {
-        font-size: 16px;
-        padding: 15px 30px;
-        width: 100%; /* Assicura che il link occupi tutta la larghezza disponibile */
-    }
-
-    .container {
-        padding: 15px;
-    }
-
-    footer {
-        font-size: 14px;
-    }
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
 }
