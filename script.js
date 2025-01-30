@@ -1,20 +1,17 @@
-// Funzione per mostrare/nascondere la sezione "Chi Siamo"
 function toggleAbout() {
-    let aboutSection = document.getElementById("about-section");
-    let arrow = document.getElementById("arrow");
-
-    // Alterna la visibilità
-    if (aboutSection.style.display === "block") {
-        aboutSection.style.display = "none";
-        arrow.innerHTML = "▼"; // Mostra freccia in giù
+    const aboutSection = document.getElementById('about-section');
+    const arrow = document.getElementById('arrow');
+    
+    // Controlliamo se la sezione è già aperta o no
+    if (aboutSection.classList.contains("hidden")) {
+        // Aggiungiamo la classe "show" e rimuoviamo "hidden" per espandere
+        aboutSection.classList.remove("hidden");
+        aboutSection.style.maxHeight = aboutSection.scrollHeight + "px"; // Espandiamo la sezione
+        arrow.innerHTML = '▲'; // Cambiamo la freccia in su
     } else {
-        aboutSection.style.display = "block";
-        arrow.innerHTML = "▲"; // Mostra freccia in su
+        // Se è già aperta, la nascondiamo
+        aboutSection.style.maxHeight = "0px"; // Nascondiamo la sezione
+        aboutSection.classList.add("hidden");
+        arrow.innerHTML = '▼'; // Cambiamo la freccia in giù
     }
 }
-
-document.getElementById("about-toggle").addEventListener("click", function() {
-    let aboutSection = document.getElementById("about");
-    aboutSection.style.display = (aboutSection.style.display === "none" || aboutSection.style.display === "") ? "block" : "none";
-    document.body.style.height = "auto"; // Permette l’espansione della pagina su Android
-});

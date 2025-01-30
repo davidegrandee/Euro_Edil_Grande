@@ -115,6 +115,11 @@ header {
     min-height: 100px;
 }
 
+/* Aggiungi margine quando il testo "Chi Siamo" è visibile */
+.about:not(.hidden) {
+   margin-bottom: 20px; /* Spazio tra il testo e il blocco sottostante */
+}
+
 /* Hidden "Chi Siamo" Block */
 .hidden {
     display: none;
@@ -157,9 +162,9 @@ footer {
     height: auto;
 }
 
-/* Active "Chi Siamo" Block */
+/* Aggiungi uno spazio tra il testo "Chi Siamo" e il blocco "Tutte le informazioni" */
 .about-content.active {
-    max-height: 500px;
+    margin-bottom: 20px; /* Puoi cambiare 20px con qualsiasi valore che ti piace */
 }
 
 /* Rimuovere il padding per mobile */
