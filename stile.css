@@ -1,7 +1,7 @@
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif;
     background-color: #1a1a2e;
     color: #fff;
     display: flex;
@@ -9,10 +9,9 @@ body {
     align-items: center;
     flex-direction: column;
     min-height: 100vh;
-    background-image: url('logo.jpg'); /* Aggiungi il percorso corretto dell'immagine */
-    background-repeat: no-repeat;
-    background-size: cover; /* Fa sì che l'immagine copra l'intera pagina */
-    background-position: center center; /* Centra l'immagine */
+    background-image: url('logo.jpg');
+    background-size: cover;
+    background-position: center center;
 }
 
 header {
@@ -23,36 +22,36 @@ header {
     font-size: 24px;
     font-weight: bold;
     width: 100%;
-    position: relative;
+    position: fixed; /* Imposta il header come fisso */
+    top: 0; /* Posiziona il header in cima alla pagina */
+    left: 0; /* Allinea il header a sinistra */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     height: 80px;
     line-height: 60px;
-    margin-top: 0;
     z-index: 1;
     white-space: normal;
-    word-wrap: break-word; /* Parole troppo lunghe vengono spezzate */
-    word-break: break-word; /* Aggiungi questo per forzare la rottura delle parole lunghe */
-    overflow: hidden; /* Nasconde eventuale testo che esce */
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow: hidden;
     display: flex;
     justify-content: center;
-    align-items: center; /* Assicura che il contenuto sia centrato */
-    flex-wrap: wrap; /* Permette al contenuto di andare a capo se necessario */
+    align-items: center;
+    flex-wrap: wrap;
 }
-/* Container for All Content */
+
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centra verticalmente */
-    align-items: center; /* Centra orizzontalmente */
+    justify-content: center;
+    align-items: center;
     text-align: center;
     width: 100%;
     max-width: 600px;
-    margin-top: 80px; /* Spazio per header */
-    margin-bottom: 100px; /* Spazio per footer */
-    flex-grow: 1; /* Assicura che la container prenda l'altezza disponibile */
+    margin-top: 100px;
+    margin-bottom: 100px;
+    flex-grow: 1;
 }
 
-/* Block Containers for Links */
 .link-container,
 .about-toggle {
     background: linear-gradient(135deg, #FFD700, #FFA500);
@@ -65,7 +64,7 @@ header {
     font-weight: bold;
     cursor: pointer;
     transition: transform 0.2s;
-    margin-bottom: 15px; /* Spazio tra i blocchi */
+    margin-bottom: 15px;
 }
 
 .link-container a {
@@ -79,7 +78,6 @@ header {
     transform: scale(1.05);
 }
 
-/* Block for "Chi Siamo" Toggling */
 .about-toggle {
     background: linear-gradient(135deg, #FFD700, #FFA500);
     padding: 15px;
@@ -95,7 +93,6 @@ header {
     color: black;
 }
 
-/* "Chi Siamo" Content Block */
 .about {
     background: #fff;
     color: #333;
@@ -105,7 +102,7 @@ header {
     font-size: 18px;
     line-height: 1.6;
     width: 100%;
-    max-width: 600px; /* Larghezza ottimizzata */
+    max-width: 600px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -115,17 +112,14 @@ header {
     min-height: 100px;
 }
 
-/* Aggiungi margine quando il testo "Chi Siamo" è visibile */
 .about:not(.hidden) {
-   margin-bottom: 20px; /* Spazio tra il testo e il blocco sottostante */
+   margin-bottom: 20px;
 }
 
-/* Hidden "Chi Siamo" Block */
 .hidden {
     display: none;
 }
 
-/* Footer Style */
 footer {
     background: linear-gradient(135deg, #FFD700, #FFA500);
     text-align: center;
@@ -135,10 +129,9 @@ footer {
     position: fixed;
     bottom: 0;
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
-    z-index: 2; /* Mantiene il footer sopra gli altri contenuti */
+    z-index: 2;
 }
 
-/* Flex Container for About Text and Image */
 .about-content {
     display: flex;
     flex-direction: column;
@@ -148,49 +141,63 @@ footer {
     width: 100%;
 }
 
-/* Make sure About section is responsive */
 #about {
     width: 90%;
     max-width: 900px;
     margin-bottom: 40px;
 }
 
-/* About Image Style */
 .about-img {
     width: 100%;
     max-width: 300px;
     height: auto;
 }
 
-/* Aggiungi uno spazio tra il testo "Chi Siamo" e il blocco "Tutte le informazioni" */
 .about-content.active {
-    margin-bottom: 20px; /* Puoi cambiare 20px con qualsiasi valore che ti piace */
+    margin-bottom: 20px;
 }
 
-/* Rimuovere il padding per mobile */
 @media (max-width: 600px) {
     .link-container,
     .about-toggle {
-        padding: 12px; /* Riduce il padding per dispositivi mobili */
+        padding: 12px;
         font-size: 18px;
     }
     
-    /* Rimuovi eventuali interferenze */
     .link-container a {
-        display: block; /* Assicurati che sia un blocco interamente cliccabile */
-        width: 100%; /* Rende il link completamente cliccabile */
-    }
-    header {
-        font-size: 18px; /* Riduce la dimensione del testo */
-        padding: 15px; /* Riduce il padding per una migliore visualizzazione */
-        line-height: 1.2; /* Migliora l'altezza della riga */
+        display: block;
+        width: 100%;
     }
     
-    /* Assicura che l'header non fuoriesca dal contenitore */
+    header {
+        font-size: 16px;
+        padding: 15px;
+        line-height: 1.2;
+    }
+    
     .container {
         width: 100%;
         padding: 10px;
     }
+}
+
+/* Aggiungi stile per il pulsante "Torna Indietro" */
+.back-btn {
+    display: block;
+    background-color: #FFD700;
+    color: #333;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 200px;
+    font-weight: bold;
+}
+
+.back-btn:hover {
+    background-color: #FFA500;
 }
 
 * {

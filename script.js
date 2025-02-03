@@ -1,17 +1,43 @@
 function toggleAbout() {
-    const aboutSection = document.getElementById('about-section');
-    const arrow = document.getElementById('arrow');
+    var aboutSection = document.getElementById('about-section');
+    var arrow = document.getElementById('arrow');
     
-    // Controlliamo se la sezione è già aperta o no
-    if (aboutSection.classList.contains("hidden")) {
-        // Aggiungiamo la classe "show" e rimuoviamo "hidden" per espandere
-        aboutSection.classList.remove("hidden");
-        aboutSection.style.maxHeight = aboutSection.scrollHeight + "px"; // Espandiamo la sezione
-        arrow.innerHTML = '▲'; // Cambiamo la freccia in su
+    if (aboutSection.classList.contains('hidden')) {
+        aboutSection.classList.remove('hidden');
+        arrow.innerHTML = '▲';  // Modifica la freccia per chiudere
     } else {
-        // Se è già aperta, la nascondiamo
-        aboutSection.style.maxHeight = "0px"; // Nascondiamo la sezione
-        aboutSection.classList.add("hidden");
-        arrow.innerHTML = '▼'; // Cambiamo la freccia in giù
+        aboutSection.classList.add('hidden');
+        arrow.innerHTML = '▼';  // Modifica la freccia per aprire
     }
 }
+
+
+// Effetto di scorrimento lento per le immagini
+document.addEventListener("scroll", function() {
+    let slides = document.querySelectorAll(".slide");
+    slides.forEach((slide, index) => {
+        let speed = (index + 1) * 0.3; 
+        slide.style.transform = `translateY(${window.scrollY * speed}px)`;
+    });
+});
+
+let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000); // Cambia slide ogni 3 secondi
+        }
+
+        function changeSlide(n) {
+            slideIndex += n - 1;
+            showSlides();
+        }
