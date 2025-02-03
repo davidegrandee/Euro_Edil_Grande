@@ -22,9 +22,9 @@ header {
     font-size: 24px;
     font-weight: bold;
     width: 100%;
-    position: fixed; /* Imposta il header come fisso */
-    top: 0; /* Posiziona il header in cima alla pagina */
-    left: 0; /* Allinea il header a sinistra */
+    position: fixed;
+    top: 0;
+    left: 0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     height: 80px;
     line-height: 60px;
@@ -37,6 +37,10 @@ header {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+
+    /* Aggiungi un'ombra al testo per migliorare il contrasto */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.6); /* Sfondo semi-trasparente */
 }
 
 .container {
