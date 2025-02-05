@@ -37,10 +37,25 @@ header {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+}
 
-    /* Aggiungi un'ombra al testo per migliorare il contrasto */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-    background-color: rgba(0, 0, 0, 0.6); /* Sfondo semi-trasparente */
+/* HEADER */
+.main-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 2;
 }
 
 .container {
@@ -185,18 +200,20 @@ footer {
     }
 }
 
-/* Aggiungi stile per il pulsante "Torna Indietro" */
+/* PULSANTE "TORNA INDIETRO" */
 .back-btn {
     display: block;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: #FFD700;
     color: #333;
     padding: 10px;
     text-align: center;
     text-decoration: none;
     border-radius: 5px;
-    margin-top: 20px;
-    width: 100%;
-    max-width: 200px;
+    width: 200px;
     font-weight: bold;
 }
 
@@ -208,3 +225,27 @@ footer {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
 }
+
+.iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* IFRAME A SCHERMO INTERO E ORIZZONTALE */
+.iframe-container {
+    position: fixed;
+    top: 80px; /* Per non coprire l'header */
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 80px); /* Occupa tutto lo schermo sotto l'header */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iframe.enlarged {
+    width: 100%;
+    height: 700px; /* Altezza aumentata */
+}
+
