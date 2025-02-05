@@ -17,45 +17,25 @@ body {
 header {
     background: linear-gradient(135deg, #FFD700, #FFA500);
     color: #333;
-    padding: 20px;
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
+    height: 80px; /* Altezza dell'header */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    height: 80px;
-    line-height: 60px;
-    z-index: 1;
-    white-space: normal;
-    word-wrap: break-word;
-    word-break: break-word;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
+    z-index: 10;
 
-/* HEADER */
-.main-header {
+    /* Centra perfettamente il testo */
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 100%;
-    height: 80px;
-    background: linear-gradient(135deg, #FFD700, #FFA500);
-    color: #333;
-    font-size: 24px;
+
+    font-size: 30px;
     font-weight: bold;
-    position: fixed;
-    top: 0;
-    left: 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    z-index: 2;
+    padding: 0; /* Rimuove padding inutile */
+    white-space: nowrap; /* Evita la rottura del testo */
+    overflow: hidden;
 }
 
 .container {
@@ -248,4 +228,3 @@ footer {
     width: 100%;
     height: 700px; /* Altezza aumentata */
 }
-
